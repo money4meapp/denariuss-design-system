@@ -1,0 +1,342 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/buttons/**",
+              "components/data/**",
+              "components/forms/**",
+              "components/surfaces/**",
+              "research/**",
+              "ui_kits/app/**",
+              "ui_kits/marketing/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Sora|Hanken Grotesk|Plus Jakarta Sans|Space Grotesk))/i]",
+        "message": "Font not provided by the design system. Available: Sora, Hanken Grotesk, Plus Jakarta Sans, Space Grotesk."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: children, tone."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:popular|positive|negative|warning|neutral)$/]",
+        "message": "<Badge> tone must be one of 'popular' | 'positive' | 'negative' | 'warning' | 'neutral'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|size|href|icon|iconRight|disabled|fullWidth|onClick|type|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, variant, size, href, icon, iconRight, disabled, fullWidth, onClick, type."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|ghost)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:button|submit|reset)$/]",
+        "message": "<Button> type must be one of 'button' | 'submit' | 'reset'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|hover|accent|as|padding|onClick|key|ref|className|style|children)$/]",
+        "message": "<Card> doesn't accept that prop. Declared props: children, hover, accent, as, padding, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Chip'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|icon|accent|key|ref|className|style|children)$/]",
+        "message": "<Chip> doesn't accept that prop. Declared props: children, icon, accent."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|dot|icon|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, dot, icon."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Input'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|type|placeholder|value|onChange|helper|error|id|key|ref|className|style|children)$/]",
+        "message": "<Input> doesn't accept that prop. Declared props: label, type, placeholder, value, onChange, helper, error, id."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='KpiCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|value|delta|trend|accent|icon|key|ref|className|style|children)$/]",
+        "message": "<KpiCard> doesn't accept that prop. Declared props: label, value, delta, trend, accent, icon."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='KpiCard'] > JSXAttribute[name.name='trend'] > Literal[value!=/^(?:up|down)$/]",
+        "message": "<KpiCard> trend must be one of 'up' | 'down'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Select'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|options|value|onChange|placeholder|id|key|ref|className|style|children)$/]",
+        "message": "<Select> doesn't accept that prop. Declared props: label, options, value, onChange, placeholder, id."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Badge": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "Card": {
+        "replaces": []
+      },
+      "Chip": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "Input": {
+        "replaces": []
+      },
+      "KpiCard": {
+        "replaces": []
+      },
+      "Select": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--bg",
+      "--bg-deep",
+      "--border",
+      "--border-soft",
+      "--bw",
+      "--card",
+      "--card-2",
+      "--dur-base",
+      "--dur-fast",
+      "--dur-slow",
+      "--ease-out",
+      "--ease-pop",
+      "--faint",
+      "--font-alt",
+      "--font-body",
+      "--font-display",
+      "--font-numeric",
+      "--fw-bold",
+      "--fw-extra",
+      "--fw-medium",
+      "--fw-regular",
+      "--fw-semibold",
+      "--green",
+      "--green-050",
+      "--green-100",
+      "--green-150",
+      "--green-200",
+      "--green-400",
+      "--green-550",
+      "--green-bright",
+      "--green-deep",
+      "--green-glow",
+      "--green-ink",
+      "--gutter",
+      "--ink",
+      "--ink-2",
+      "--lh-body",
+      "--lh-display",
+      "--lh-head",
+      "--lh-tight",
+      "--line",
+      "--line-soft",
+      "--maxw",
+      "--muted",
+      "--navy",
+      "--navy-deep",
+      "--navy-panel",
+      "--navy-soft",
+      "--negative",
+      "--positive",
+      "--r-lg",
+      "--r-md",
+      "--r-pill",
+      "--r-sm",
+      "--r-xl",
+      "--section-pad",
+      "--shadow-btn",
+      "--shadow-btn-hover",
+      "--shadow-card",
+      "--shadow-float",
+      "--shadow-pop",
+      "--space-1",
+      "--space-10",
+      "--space-12",
+      "--space-16",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-8",
+      "--surface-card",
+      "--surface-raised",
+      "--text-accent",
+      "--text-base",
+      "--text-body",
+      "--text-display",
+      "--text-faint",
+      "--text-h1",
+      "--text-h2",
+      "--text-h3",
+      "--text-lead",
+      "--text-muted",
+      "--text-on-accent",
+      "--text-sm",
+      "--text-strong",
+      "--text-xs",
+      "--track-display",
+      "--track-eyebrow",
+      "--track-head",
+      "--wa-bg",
+      "--wa-head",
+      "--wa-meta",
+      "--wa-panel",
+      "--wa-recv",
+      "--wa-sent",
+      "--warning"
+    ],
+    "tokenKinds": {
+      "--green": "color",
+      "--green-bright": "color",
+      "--green-deep": "color",
+      "--green-ink": "color",
+      "--green-glow": "color",
+      "--green-050": "color",
+      "--green-100": "color",
+      "--green-150": "color",
+      "--green-200": "color",
+      "--green-400": "color",
+      "--green-550": "color",
+      "--navy": "color",
+      "--navy-deep": "color",
+      "--navy-soft": "color",
+      "--navy-panel": "color",
+      "--card": "color",
+      "--card-2": "color",
+      "--line": "color",
+      "--line-soft": "color",
+      "--ink": "color",
+      "--ink-2": "color",
+      "--muted": "color",
+      "--faint": "color",
+      "--positive": "color",
+      "--negative": "color",
+      "--warning": "color",
+      "--wa-bg": "color",
+      "--wa-panel": "color",
+      "--wa-head": "color",
+      "--wa-recv": "color",
+      "--wa-sent": "color",
+      "--wa-meta": "color",
+      "--bg": "color",
+      "--bg-deep": "color",
+      "--surface-card": "color",
+      "--surface-raised": "color",
+      "--border": "color",
+      "--border-soft": "color",
+      "--text-strong": "font",
+      "--text-body": "font",
+      "--text-muted": "font",
+      "--text-faint": "font",
+      "--text-accent": "font",
+      "--text-on-accent": "font",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--font-alt": "font",
+      "--font-numeric": "font",
+      "--fw-regular": "font",
+      "--fw-medium": "font",
+      "--fw-semibold": "font",
+      "--fw-bold": "font",
+      "--fw-extra": "font",
+      "--text-display": "font",
+      "--text-h1": "font",
+      "--text-h2": "font",
+      "--text-h3": "font",
+      "--text-lead": "font",
+      "--text-base": "font",
+      "--text-sm": "font",
+      "--text-xs": "font",
+      "--track-display": "spacing",
+      "--track-head": "spacing",
+      "--track-eyebrow": "spacing",
+      "--lh-display": "font",
+      "--lh-head": "font",
+      "--lh-body": "font",
+      "--lh-tight": "font",
+      "--maxw": "spacing",
+      "--gutter": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-8": "spacing",
+      "--space-10": "spacing",
+      "--space-12": "spacing",
+      "--space-16": "spacing",
+      "--section-pad": "spacing",
+      "--r-sm": "spacing",
+      "--r-md": "spacing",
+      "--r-lg": "spacing",
+      "--r-xl": "spacing",
+      "--r-pill": "spacing",
+      "--bw": "spacing",
+      "--shadow-card": "shadow",
+      "--shadow-pop": "shadow",
+      "--shadow-float": "shadow",
+      "--shadow-btn": "shadow",
+      "--shadow-btn-hover": "shadow",
+      "--ease-out": "other",
+      "--ease-pop": "other",
+      "--dur-fast": "other",
+      "--dur-base": "other",
+      "--dur-slow": "other"
+    },
+    "fontFamilies": [
+      "Hanken Grotesk",
+      "Plus Jakarta Sans",
+      "Sora",
+      "Space Grotesk"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+/* ============================================================
+   DENARIUSS — Typography tokens
+   Sora for display, Hanken Grotesk for body. Tight tracking on
+   big headings, generous line-height on body. Numbers can use
+   Sora (financial figures) or Space Grotesk (tabular feel).
+   ============================================================ */
+
+:root {
+  /* ---------- families ---------- */
+  --font-display: 'Sora', system-ui, sans-serif;          /* headings, figures */
+  --font-body:    'Hanken Grotesk', system-ui, sans-serif; /* body, UI         */
+  --font-alt:     'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-numeric: 'Space Grotesk', 'Sora', monospace;     /* tabular numbers   */
+
+  /* ---------- weights ---------- */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+  --fw-extra:    800; /* @kind font */
+
+  /* ---------- fluid display scale (headings use Sora 800) ---------- */
+  --text-display: clamp(40px, 6.6vw, 82px);  /* hero h1   */
+  --text-h1:      clamp(30px, 4.2vw, 52px);  /* section   */
+  --text-h2:      clamp(26px, 3.4vw, 38px);  /* sub-head  */
+  --text-h3:      clamp(20px, 2.4vw, 27px);  /* card head */
+
+  /* ---------- fixed UI scale (Hanken) ---------- */
+  --text-lead:  20px;   /* intro paragraphs   */
+  --text-base:  16px;   /* default body       */
+  --text-sm:    14.5px; /* secondary UI       */
+  --text-xs:    12.5px; /* meta, eyebrow      */
+
+  /* ---------- tracking ---------- */
+  --track-display: -0.035em;  /* large Sora       */
+  --track-head:    -0.02em;   /* medium headings  */
+  --track-eyebrow:  0.16em;   /* uppercase labels */
+
+  /* ---------- line-height ---------- */
+  --lh-display: 0.98; /* @kind font */
+  --lh-head:    1.04; /* @kind font */
+  --lh-body:    1.55; /* @kind font */
+  --lh-tight:   1.2;  /* @kind font */
+}

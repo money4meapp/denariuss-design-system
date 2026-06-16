@@ -1,0 +1,108 @@
+/* ============================================================
+   DENARIUSS — Base elements & utility classes
+   Global resets, brand background field, and the canonical
+   helper classes (eyebrow, btn, card, chip, grad-green …)
+   shared by specimen cards and UI kits. Components in /components
+   are React and reference the raw tokens directly.
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: var(--lh-body);
+}
+
+/* ---------- brand ambient background ---------- */
+.dn-bg-field {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 50% -8%, var(--green-150), transparent 60%),
+    radial-gradient(45% 40% at 88% 12%, rgba(46,207,149,0.07), transparent 60%),
+    radial-gradient(50% 45% at 6% 38%, rgba(46,207,149,0.06), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg-deep));
+}
+.dn-bg-grain {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5;
+  background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 4px 4px; mix-blend-mode: overlay;
+}
+
+/* ---------- containers ---------- */
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+.section-pad { padding: var(--section-pad) 0; }
+.center { text-align: center; margin-inline: auto; }
+
+/* ---------- typography helpers ---------- */
+h1, h2, h3, .display { font-family: var(--font-display); letter-spacing: var(--track-head); line-height: var(--lh-head); font-weight: var(--fw-extra); }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold); font-size: var(--text-xs); letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase; color: var(--green);
+  padding: 8px 15px; border-radius: var(--r-pill);
+  background: var(--green-100); border: 1px solid var(--green-200);
+}
+.eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+
+.h-display { font-size: var(--text-display); font-weight: var(--fw-extra); line-height: var(--lh-display); letter-spacing: var(--track-display); }
+.h-section { font-size: var(--text-h1); font-weight: var(--fw-extra); letter-spacing: -0.03em; line-height: var(--lh-head); }
+.h-sub     { font-size: var(--text-h3); font-weight: var(--fw-bold); letter-spacing: var(--track-head); }
+
+.lead  { font-size: clamp(16.5px, 1.5vw, 20px); color: var(--ink-2); line-height: 1.6; }
+.muted { color: var(--muted); }
+
+.grad-green {
+  background: linear-gradient(120deg, var(--green-bright), var(--green) 55%, var(--green-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  font-family: var(--font-body); font-weight: var(--fw-bold); font-size: var(--text-base);
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 15px 26px; border-radius: var(--r-pill); cursor: pointer; border: 1px solid transparent;
+  text-decoration: none; white-space: nowrap;
+  transition: transform var(--dur-fast) ease, box-shadow var(--dur-base) ease, background .2s ease, border-color .2s;
+}
+.btn:active { transform: translateY(1px) scale(.99); }
+.btn-primary {
+  color: var(--green-ink);
+  background: linear-gradient(180deg, var(--green-bright), var(--green));
+  box-shadow: var(--shadow-btn);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-btn-hover); }
+.btn-ghost {
+  color: var(--ink); background: rgba(255,255,255,0.04); border-color: var(--line);
+  backdrop-filter: blur(8px);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); transform: translateY(-2px); }
+.btn-sm { padding: 11px 18px; font-size: 14.5px; }
+.btn-lg { padding: 17px 32px; font-size: 17px; }
+
+/* ---------- cards ---------- */
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r-lg); backdrop-filter: blur(10px);
+}
+.card-hover { transition: transform var(--dur-base) ease, border-color var(--dur-base), background var(--dur-base); }
+.card-hover:hover { transform: translateY(-4px); border-color: var(--green-400); background: var(--card-2); }
+
+/* ---------- chip ---------- */
+.chip {
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  font-size: 13.5px; font-weight: var(--fw-semibold); color: var(--ink-2);
+  padding: 7px 13px; border-radius: var(--r-pill);
+  background: rgba(255,255,255,0.04); border: 1px solid var(--line);
+}
+
+/* ---------- signal colors ---------- */
+.up   { color: var(--positive); }
+.down { color: var(--negative); }

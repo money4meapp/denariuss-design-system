@@ -1,0 +1,57 @@
+<!-- @dsCard group="Marketing Site" viewport="1280x760" name="Landing Page" subtitle="denariuss.com — hero, WhatsApp demo, pricing" -->
+<!-- @startingPoint section="Marketing Site" subtitle="Full Denariuss marketing landing page" viewport="1280x900" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denariuss — Domine o fluxo do seu dinheiro</title>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="kit.css">
+<style>
+  /* Recreation note: the live site fades each block in on scroll. Preview
+     iframes throttle CSS transitions, which can strand content at opacity:0,
+     so the kit shows all blocks immediately. The looping WhatsApp chat
+     (driven by React state, not CSS reveal) still animates. */
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+</style>
+</head>
+<body id="top">
+  <div class="bg-field"></div>
+  <div class="bg-grain"></div>
+  <div id="root"></div>
+
+  <script>
+    /* point the recreated components at the real logo asset */
+    window.__resources = { logo: "../../assets/denariuss-logo-white.png" };
+  </script>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="foundations.jsx"></script>
+  <script type="text/babel" src="phone.jsx"></script>
+  <script type="text/babel" src="sections.jsx"></script>
+  <script type="text/babel" src="layout.jsx"></script>
+  <script type="text/babel">
+    const { Nav, Hero, ProofStrip, WhatsAppSection, Steps, Features, Pricing, Bonus, Security, FinalCTA, Footer } = window;
+    function App() {
+      return (
+        <>
+          <Nav />
+          <Hero variant="whatsapp" speed={1} />
+          <ProofStrip />
+          <WhatsAppSection variant="default" speed={1} />
+          <Steps />
+          <Features />
+          <Pricing />
+          <Bonus />
+          <Security />
+          <FinalCTA />
+          <Footer />
+        </>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  </script>
+</body></html>

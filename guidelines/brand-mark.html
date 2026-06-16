@@ -1,0 +1,22 @@
+<!-- @dsCard group="Brand" viewport="700x180" name="Symbol — D$ Mark" subtitle="Abbreviated mark for avatars, favicons & app icons" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { background: var(--bg); padding: 28px; display: flex; gap: 22px; align-items: center; }
+  .tile { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .box { display: grid; place-items: center; border-radius: 22px; }
+  .b1 { width: 110px; height: 110px; background: #F4F7F5; }
+  .b1 img { height: 56px; }
+  .b2 { width: 110px; height: 110px; background: linear-gradient(150deg,var(--green-bright),var(--green-deep)); }
+  .b2 .d { font-family: var(--font-display); font-weight: 800; font-size: 50px; color: var(--green-ink); }
+  .b3 { width: 110px; height: 110px; background: var(--navy-soft); border: 1px solid var(--green-400); }
+  .b3 img { height: 50px; }
+  .lab { font-family: var(--font-numeric); font-size: 11px; color: var(--muted); }
+</style></head>
+<body>
+  <div class="tile"><div class="box b1"><img src="../assets/denariuss-mark-green.png" alt="D$"></div><span class="lab">green / light</span></div>
+  <div class="tile"><div class="box b2"><span class="d">D$</span></div><span class="lab">ink / green fill</span></div>
+  <div class="tile"><div class="box b3"><img src="../assets/denariuss-mark-green.png" alt="D$"></div><span class="lab">green / navy</span></div>
+  <div style="margin-left:8px;max-width:200px"><p class="muted" style="font-family:var(--font-body);font-size:13.5px;line-height:1.5">The <strong style="color:var(--ink)">D$</strong> contraction stands in wherever the full wordmark won't fit — chat avatar, sidebar collapse, app icon.</p></div>
+</body></html>

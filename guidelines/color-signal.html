@@ -1,0 +1,19 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Signal Colors" subtitle="Positive / negative / warning for money movement" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { background: var(--bg); padding: 22px 24px; }
+  .row { display: flex; gap: 14px; }
+  .sw { flex: 1; border-radius: var(--r-md); border: 1px solid var(--line); padding: 14px; min-height: 104px; display: flex; flex-direction: column; justify-content: space-between; background: var(--card); }
+  .val { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -.02em; }
+  .name { font-family: var(--font-body); font-weight: 700; font-size: 13px; color: var(--ink); }
+  .hex  { font-family: var(--font-numeric); font-size: 11.5px; color: var(--muted); }
+</style></head>
+<body>
+  <div class="row">
+    <div class="sw"><span class="val" style="color:#3CE6A6">▲ R$ 8.400</span><div><div class="name">Positive</div><div class="hex">--positive · #3CE6A6</div></div></div>
+    <div class="sw"><span class="val" style="color:#FF8A8A">▼ R$ 5.130</span><div><div class="name">Negative</div><div class="hex">--negative · #FF8A8A</div></div></div>
+    <div class="sw"><span class="val" style="color:#FEBC2E">● Vence hoje</span><div><div class="name">Warning</div><div class="hex">--warning · #FEBC2E</div></div></div>
+  </div>
+</body></html>

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Glass & Tinted Fills" subtitle="Translucent white cards + green tints layered on navy" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { background: var(--bg); padding: 22px 24px; }
+  .row { display: flex; gap: 12px; }
+  .sw { flex: 1; border-radius: var(--r-sm); padding: 12px; min-height: 104px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .name { font-family: var(--font-body); font-weight: 700; font-size: 12px; color: var(--ink); }
+  .hex  { font-family: var(--font-numeric); font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+</style></head>
+<body>
+  <div class="row">
+    <div class="sw" style="background:var(--card); border:1px solid var(--line);"><span class="name">card</span><span class="hex">white 3.5%</span></div>
+    <div class="sw" style="background:var(--card-2); border:1px solid var(--line);"><span class="name">card-2</span><span class="hex">white 5.5%</span></div>
+    <div class="sw" style="background:var(--green-100); border:1px solid var(--green-200);"><span class="name" style="color:#3CE6A6">green-100</span><span class="hex" style="color:#3CE6A6">green 10%</span></div>
+    <div class="sw" style="background:var(--green-150); border:1px solid var(--green-400);"><span class="name" style="color:#3CE6A6">green-150</span><span class="hex" style="color:#3CE6A6">green 16%</span></div>
+    <div class="sw" style="background:transparent; border:1px solid var(--line);"><span class="name">line</span><span class="hex">white 9%</span></div>
+  </div>
+</body></html>

@@ -1,0 +1,4 @@
+- [ ]  Mandar para I.A reprocessar arquivos, alterar histórico por cartão de crédito e focar o prompt para encontrar divergencia de valor ou item a mais ou a menos.
+- [ ]  Saldo inicial trazer por conta e trazer o valor em um campo editavél caso usuário queira usar um diferente.
+- [ ]  Ajustar categoria importação para vir da I.A selecionado se não achar pegar default. Mandar para I.A categorizar somente coisas que não tem já categoria registrada no sistema, que não achou.
+- [ ]  Importar fatura, confirmar despesa e receita ai liberar botão, se não reprocessar, opção 3x.

@@ -1,0 +1,69 @@
+/* ============================================================
+   DENARIUSS — Color tokens
+   Dark fintech palette: deep navy canvas, signal green accent.
+   Base values first, then semantic aliases.
+   ============================================================ */
+
+:root {
+  /* ---------- brand green (the $$) ---------- */
+  --green:        #2ECF95;   /* primary brand / logo green        */
+  --green-bright: #3CE6A6;   /* highlight, gradient top, hover     */
+  --green-deep:   #1E9D72;   /* gradient bottom, pressed           */
+  --green-ink:    #06281D;   /* text on green fills                */
+  --green-glow:   rgba(46,207,149,0.45); /* shadow / ambient glow  */
+
+  /* tinted green surfaces (on dark) */
+  --green-050: rgba(46,207,149,0.06);
+  --green-100: rgba(46,207,149,0.10);
+  --green-150: rgba(46,207,149,0.16);
+  --green-200: rgba(46,207,149,0.22);
+  --green-400: rgba(46,207,149,0.40);
+  --green-550: rgba(46,207,149,0.55);
+
+  /* ---------- navy surfaces ---------- */
+  --navy:        #0F172A;   /* app/page canvas                    */
+  --navy-deep:   #0A101F;   /* deepest, footer / gradient bottom  */
+  --navy-soft:   #121C30;   /* raised section                     */
+  --navy-panel:  #101A2C;   /* browser/dashboard chrome           */
+
+  /* translucent fills (glass cards on navy) */
+  --card:      rgba(255,255,255,0.035);
+  --card-2:    rgba(255,255,255,0.055);
+  --line:      rgba(255,255,255,0.09);
+  --line-soft: rgba(255,255,255,0.055);
+
+  /* ---------- text ramp (on dark) ---------- */
+  --ink:   #EEF4F1;   /* primary text / headings   */
+  --ink-2: #C6D2DD;   /* body lead                 */
+  --muted: #93A1B5;   /* secondary, captions       */
+  --faint: #5E6E84;   /* tertiary, meta / disabled */
+
+  /* ---------- semantic signals ---------- */
+  --positive:    #3CE6A6;   /* gains, entradas, up   */
+  --negative:    #FF8A8A;   /* losses, saídas, down  */
+  --warning:     #FEBC2E;   /* attention             */
+
+  /* ---------- whatsapp / chat surfaces ---------- */
+  --wa-bg:    #0A1118;
+  --wa-panel: #111B22;
+  --wa-head:  #18242C;
+  --wa-recv:  #1E2C34;   /* received (assistant) bubble */
+  --wa-sent:  #103D30;   /* sent (user) bubble          */
+  --wa-meta:  #7E97A3;
+
+  /* ---------- semantic surface aliases ---------- */
+  --bg:            var(--navy);
+  --bg-deep:       var(--navy-deep);
+  --surface-card:  var(--card);
+  --surface-raised:var(--card-2);
+  --border:        var(--line);
+  --border-soft:   var(--line-soft);
+
+  /* ---------- semantic text aliases ---------- */
+  --text-strong: var(--ink);
+  --text-body:   var(--ink-2);
+  --text-muted:  var(--muted);
+  --text-faint:  var(--faint);
+  --text-accent: var(--green);
+  --text-on-accent: var(--green-ink);
+}

@@ -1,0 +1,46 @@
+<!-- @dsCard group="Components" viewport="700x280" name="Surfaces — Card, Eyebrow, Chip, Badge" subtitle="Glass panels, kickers, tags & ribbons" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { background: var(--bg); padding: 26px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .stack { display: flex; flex-direction: column; gap: 12px; }
+  .inline { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  h3 { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--ink); margin: 4px 0; }
+  p { font-family: var(--font-body); font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+</style></head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { Card, Eyebrow, Chip, Badge } = window.DenariussDesignSystem_a1c3fa;
+    const Lock = () => <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2.5"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>;
+    function Demo() {
+      return (
+        <div className="grid">
+          <Card hover className="stack">
+            <Eyebrow dot>Recursos</Eyebrow>
+            <h3>Visão geral do mês</h3>
+            <p>Entradas, saídas e saldo num único painel, com leitura clara do seu dinheiro.</p>
+            <div className="inline"><Chip icon={<Lock/>}>Dados criptografados</Chip><Chip accent>🍽 Alimentação</Chip></div>
+          </Card>
+          <Card accent className="stack">
+            <div className="inline"><Badge tone="popular">Mais popular</Badge></div>
+            <h3>Orçamento completo</h3>
+            <p>Defina quanto gastar por categoria e veja se vai fechar o mês no azul.</p>
+            <div className="inline">
+              <Badge tone="positive">▲ Entradas</Badge>
+              <Badge tone="negative">▼ Saídas</Badge>
+              <Badge tone="warning">● Vence hoje</Badge>
+            </div>
+          </Card>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+  </script>
+</body></html>

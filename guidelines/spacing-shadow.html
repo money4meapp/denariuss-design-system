@@ -1,0 +1,17 @@
+<!-- @dsCard group="Spacing" viewport="700x190" name="Shadows & Glow" subtitle="Deep ambient drops + the reserved green glow" -->
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { background: var(--bg); padding: 30px 26px; display: flex; gap: 24px; align-items: center; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 12px; flex: 1; }
+  .box { width: 100%; height: 88px; border-radius: var(--r-lg); background: var(--navy-panel); border: 1px solid var(--line); }
+  .glow { background: linear-gradient(180deg,var(--green-bright),var(--green)); border: none; }
+  .lab { font-family: var(--font-numeric); font-size: 11.5px; color: var(--muted); text-align: center; }
+</style></head>
+<body>
+  <div class="col"><div class="box" style="box-shadow:var(--shadow-card)"></div><span class="lab">--shadow-card</span></div>
+  <div class="col"><div class="box" style="box-shadow:var(--shadow-float)"></div><span class="lab">--shadow-float</span></div>
+  <div class="col"><div class="box glow" style="box-shadow:var(--shadow-btn)"></div><span class="lab">--shadow-btn (glow)</span></div>
+  <div class="col"><div class="box" style="box-shadow:var(--shadow-pop)"></div><span class="lab">--shadow-pop</span></div>
+</body></html>

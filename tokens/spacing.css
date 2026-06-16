@@ -1,0 +1,48 @@
+/* ============================================================
+   DENARIUSS — Spacing, radius, shadow & motion tokens
+   Pill-everything buttons, soft 12–34px card radii, deep
+   ambient drop shadows + a green glow reserved for the brand.
+   ============================================================ */
+
+:root {
+  /* ---------- layout ---------- */
+  --maxw:    1200px;   /* content container       */
+  --gutter:  28px;     /* container side padding   */
+
+  /* ---------- spacing scale (4px base) ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  26px;
+  --space-8:  34px;
+  --space-10: 48px;
+  --space-12: 64px;
+  --space-16: 96px;
+  --section-pad: clamp(72px, 10vw, 130px); /* vertical section rhythm */
+
+  /* ---------- radius ---------- */
+  --r-sm:   12px;   /* inputs, small chips     */
+  --r-md:   18px;   /* list rows, panels       */
+  --r-lg:   26px;   /* cards                   */
+  --r-xl:   34px;   /* hero / feature blocks   */
+  --r-pill: 999px;  /* buttons, eyebrows, chips */
+
+  /* ---------- borders ---------- */
+  --bw: 1px; /* @kind spacing */
+
+  /* ---------- shadows ---------- */
+  --shadow-card:  0 50px 100px -40px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04);
+  --shadow-pop:   0 30px 70px -34px var(--green-glow);
+  --shadow-float: 0 18px 40px -16px rgba(0,0,0,0.7);
+  --shadow-btn:   0 10px 30px -8px var(--green-glow), inset 0 1px 0 rgba(255,255,255,.35);
+  --shadow-btn-hover: 0 16px 40px -10px var(--green-glow), inset 0 1px 0 rgba(255,255,255,.45);
+
+  /* ---------- motion ---------- */
+  --ease-out:   cubic-bezier(.2,.7,.2,1); /* @kind other */
+  --ease-pop:   cubic-bezier(.2,.8,.2,1); /* @kind other */
+  --dur-fast:   .18s; /* @kind other */
+  --dur-base:   .25s; /* @kind other */
+  --dur-slow:   .7s;  /* @kind other */
+}
